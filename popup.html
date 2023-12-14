@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Extension Status</title>
     <style>
         body {
-            min-width: 200px;
-            margin: 10px;
+            font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
         }
 
         #status {
             font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0074cc;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        p {
+            color: #777;
         }
     </style>
 </head>
-
 <body>
     <div id="status">Checking...</div>
+    <a href="https://github.com/AazainKhan/d2l-grade-calculator" target="_blank">Github</a><br>
+    <p>By: <a href="https://github.com/aazainkhan" target="_blank">Aazain Khan</a></p>
     <script src="popup.js"></script>
 </body>
-
 </html>

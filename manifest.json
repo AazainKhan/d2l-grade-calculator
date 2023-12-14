@@ -5,7 +5,7 @@
     "description": "Calculates total grade percentage.",
     "permissions": [
         "activeTab",
-        "scripting",
+        "scripting"
     ],
     "host_permissions": [
         "*://*/*d2l*/*grades*",
