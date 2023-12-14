@@ -1,7 +1,5 @@
 # D2L Grade Calculator
 
-This is a simple grade calculator extension for the D2L platform.
-
 ![Screenshot 2023-12-14 at 5 27 54 AM (2)](https://github.com/AazainKhan/d2l-grade-calculator/assets/43759637/3825f651-59b5-4492-abf2-e60391bd5cea)
 
 
