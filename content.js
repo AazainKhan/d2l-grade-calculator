@@ -33,10 +33,45 @@ function calculateGradeTotal() {
 
     let totalPercentage = totalMaxWeight ? (totalWeightAchieved / totalMaxWeight) * 100 : 0;
 
-    let newRow = gradesTable.insertRow();
-    let newCell = newRow.insertCell();
-    newCell.colSpan = 5;
-    newCell.textContent = `Total Percentage: ${totalPercentage.toFixed(2)}%`;
+    // Find the header row to determine the column index for "Weight Achieved"
+    let headerRow = gradesTable.querySelector('tr');
+    let weightAchievedColumnIndex = -1;
+
+    if (headerRow) {
+        Array.from(headerRow.cells).forEach((cell, index) => {
+            if (cell.textContent.includes("Weight Achieved")) {
+                weightAchievedColumnIndex = index;
+            }
+        });
+    }
+
+    if (weightAchievedColumnIndex !== -1) {
+        // Insert a new row with the total percentage under the "Weight Achieved" column
+        let newRow = gradesTable.insertRow();
+        
+        // Create the first cell with "Total grade" text
+        let totalGradeCell = newRow.insertCell();
+        totalGradeCell.textContent = "Total grade";
+
+        // Create empty cells to align with the header structure
+        for (let i = 1; i < weightAchievedColumnIndex; i++) {
+            newRow.insertCell();
+        }
+
+        // Create a cell for the total percentage value
+        let percentageCell = newRow.insertCell();
+        percentageCell.textContent = `${totalPercentage.toFixed(2)}%`;
+        percentageCell.style.textAlign = "right"; // Align to the right
+
+        // Create a cell for empty space to align with the remaining columns
+        newRow.insertCell();
+
+        // Fill the remaining cells to match the header structure
+        let remainingColumns = headerRow.cells.length - weightAchievedColumnIndex - 2;
+        for (let i = 0; i < remainingColumns; i++) {
+            newRow.insertCell();
+        }
+    }
 }
 
 // Execute the function
