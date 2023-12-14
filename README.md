@@ -4,7 +4,7 @@ This is a simple grade calculator extension for the D2L platform.
 
 ## Overview
 
-I was tired of having to manually calculate my grades on D2L, so I made this extension to do it for me and display it at the bottom of the grades table.
+I was tired of having to manually calculate my grades using online grade calculators, so I made this extension to do it for me and display it at the bottom of the grades table.
 
 ## Installation
 
@@ -23,7 +23,3 @@ You can check the extensions status by clicking on the extension icon.
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
