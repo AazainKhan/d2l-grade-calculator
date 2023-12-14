@@ -51,7 +51,7 @@ function calculateGradeTotal() {
         
         // Create the first cell with "Total grade" text
         let totalGradeCell = newRow.insertCell();
-        totalGradeCell.textContent = "Total grade";
+        totalGradeCell.innerHTML = "<b>Total grade</b>";
 
         // Create empty cells to align with the header structure
         for (let i = 1; i < weightAchievedColumnIndex; i++) {
@@ -60,7 +60,7 @@ function calculateGradeTotal() {
 
         // Create a cell for the total percentage value
         let percentageCell = newRow.insertCell();
-        percentageCell.textContent = `${totalPercentage.toFixed(2)}%`;
+        percentageCell.innerHTML = `<b>${totalPercentage.toFixed(2)}%</b>`;
         percentageCell.style.textAlign = "right"; // Align to the right
 
         // Create a cell for empty space to align with the remaining columns
