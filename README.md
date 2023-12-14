@@ -1,3 +1,5 @@
+<img src="images/icon48.png"/>
+
 # D2L Grade Calculator
 
 ![Screenshot 2023-12-14 at 5 27 54 AM (2)](https://github.com/AazainKhan/d2l-grade-calculator/assets/43759637/3825f651-59b5-4492-abf2-e60391bd5cea)
