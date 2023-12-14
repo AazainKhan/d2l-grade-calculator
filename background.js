@@ -1,21 +1,13 @@
-// Message listener for receiving messages from content scripts
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    if (message.action === "calculate_grade") {
-        // If calculateTotalGrade is asynchronous, you can use a Promise
-        calculateTotalGrade().then(totalGrade => {
-            // Send the total grade back to the content script
-            sendResponse({ totalGrade });
-        });
-
-        // Return true to indicate you wish to send a response asynchronously
-        return true;
+    if (message.action === "calculate_grade" && message.grades) {
+        let totalGrade = calculateAverageGrade(message.grades);
+        sendResponse({ totalGrade });
     }
+    return true; // Keep the message channel open for asynchronous response
 });
 
-// Example function for calculating the total grade (you should implement your logic here)
-function calculateTotalGrade() {
-    // Implement your grade calculation logic here
-    // Replace this with your actual calculation
-    const totalGrade = 85.5; // Example total grade
-    return Promise.resolve(totalGrade); // Return a Promise that resolves with the total grade
+function calculateAverageGrade(grades) {
+    if (grades.length === 0) return 0;
+    let sum = grades.reduce((total, grade) => total + grade, 0);
+    return sum / grades.length;
 }
